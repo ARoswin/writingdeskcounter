@@ -61,7 +61,7 @@
   .progress {
     height: 100%;
     background: #C08011;
-    width: 42%;
+    width: 0%;
   }
 
   .percent {
@@ -89,11 +89,11 @@
   <div class="subtitle">DEBUT NOVEL</div>
 
   <div class="count">
-    <span id="currentWords">40000</span>
+    <span id="currentWords">30,122</span>
   </div>
 
   <div class="goal">
-    / 100,000 WORDS
+    / 90,000 WORDS
   </div>
 
   <div class="bar">
@@ -101,7 +101,7 @@
   </div>
 
   <div class="percent">
-    <span id="percentage">42</span>% COMPLETE
+    <span id="percentage">0</span>% COMPLETE
   </div>
 
   <div class="chapter">
@@ -111,11 +111,7 @@
 </div>
 
 <script>
-
-  /* CHANGE ONLY THIS NUMBER */
   const currentWords = 30122;
-
-  /* YOUR TOTAL WORD-COUNT GOAL */
   const goalWords = 90000;
 
   const percentage = Math.min(
@@ -131,7 +127,6 @@
 
   document.getElementById("progress").style.width =
     percentage + "%";
-
 </script>
 
 </body>
