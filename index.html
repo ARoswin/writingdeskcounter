@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    margin: 0;
+    background: transparent;
+    font-family: Georgia, serif;
+    color: #263A2F;
+    text-align: center;
+  }
+
+  .tracker {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  .label {
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+  }
+
+  .title {
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+  }
+
+  .count {
+    font-size: 52px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .goal {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+
+  .bar {
+    width: 100%;
+    height: 6px;
+    background: #DED8CC;
+    margin: 28px auto 14px;
+    overflow: hidden;
+  }
+
+  .progress {
+    height: 100%;
+    background: #C08011;
+    width: 42%;
+  }
+
+  .percent {
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .chapter {
+    margin-top: 22px;
+    font-size: 15px;
+    font-style: italic;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="tracker">
+
+  <div class="label">CURRENTLY WRITING</div>
+
+  <div class="title">WHEN THE LAST CALLS</div>
+
+  <div class="subtitle">DEBUT NOVEL</div>
+
+  <div class="count">
+    <span id="currentWords">42000</span>
+  </div>
+
+  <div class="goal">
+    / 100,000 WORDS
+  </div>
+
+  <div class="bar">
+    <div class="progress" id="progress"></div>
+  </div>
+
+  <div class="percent">
+    <span id="percentage">42</span>% COMPLETE
+  </div>
+
+  <div class="chapter">
+    Chapter 14 • Currently Drafting
+  </div>
+
+</div>
+
+<script>
+
+  /* CHANGE ONLY THIS NUMBER */
+  const currentWords = 42000;
+
+  /* YOUR TOTAL WORD-COUNT GOAL */
+  const goalWords = 100000;
+
+  const percentage = Math.min(
+    (currentWords / goalWords) * 100,
+    100
+  );
+
+  document.getElementById("currentWords").textContent =
+    currentWords.toLocaleString();
+
+  document.getElementById("percentage").textContent =
+    Math.round(percentage);
+
+  document.getElementById("progress").style.width =
+    percentage + "%";
+
+</script>
+
+</body>
+</html>
