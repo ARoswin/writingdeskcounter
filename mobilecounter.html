@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
   body {
     margin: 0;
@@ -9,48 +15,48 @@
 
   .tracker {
     width: 100%;
-    max-width: 150px;
-    margin: 8px auto;
-    padding: 2px;
+    max-width: 75px;
+    margin: 4px auto;
+    padding: 1px;
     box-sizing: border-box;
   }
 
   .label {
     font-family: "Cinzel", Georgia, serif;
-    font-size: 7px;
-    letter-spacing: 1px;
-    margin-bottom: 7px;
+    font-size: 4px;
+    letter-spacing: .5px;
+    margin-bottom: 4px;
   }
 
   .title {
     font-family: "Cinzel", Georgia, serif;
-    font-size: 10px;
-    letter-spacing: .5px;
-    margin-bottom: 2px;
+    font-size: 5px;
+    letter-spacing: .25px;
+    margin-bottom: 1px;
   }
 
   .subtitle {
-    font-size: 7px;
-    letter-spacing: 1px;
-    margin-bottom: 9px;
+    font-size: 4px;
+    letter-spacing: .5px;
+    margin-bottom: 5px;
   }
 
   .count {
-    font-size: 19px;
+    font-size: 10px;
     line-height: 1;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
 
   .goal {
-    font-size: 7px;
-    letter-spacing: .5px;
+    font-size: 4px;
+    letter-spacing: .25px;
   }
 
   .bar {
     width: 100%;
-    height: 3px;
+    height: 2px;
     background: #DED8CC;
-    margin: 10px auto 6px;
+    margin: 5px auto 3px;
     overflow: hidden;
   }
 
@@ -62,13 +68,68 @@
 
   .percent {
     font-family: "Cinzel", Georgia, serif;
-    font-size: 7px;
-    letter-spacing: 1px;
+    font-size: 4px;
+    letter-spacing: .5px;
   }
 
   .chapter {
-    margin-top: 8px;
-    font-size: 7px;
+    margin-top: 4px;
+    font-size: 4px;
     font-style: italic;
   }
 </style>
+</head>
+
+<body>
+
+<div class="tracker">
+
+  <div class="label">CURRENTLY WRITING</div>
+
+  <div class="title">WHEN THE LAST CALLS</div>
+
+  <div class="subtitle">DEBUT NOVEL</div>
+
+  <div class="count">
+    <span id="currentWords">30,122</span>
+  </div>
+
+  <div class="goal">
+    / 90,000 WORDS
+  </div>
+
+  <div class="bar">
+    <div class="progress" id="progress"></div>
+  </div>
+
+  <div class="percent">
+    <span id="percentage">0</span>% COMPLETE
+  </div>
+
+  <div class="chapter">
+    Chapter 14 • Currently Drafting
+  </div>
+
+</div>
+
+<script>
+  const currentWords = 30122;
+  const goalWords = 90000;
+
+  const percentage = Math.min(
+    (currentWords / goalWords) * 100,
+    100
+  );
+
+  document.getElementById("currentWords").textContent =
+    currentWords.toLocaleString();
+
+  document.getElementById("percentage").textContent =
+    Math.round(percentage);
+
+  document.getElementById("progress").style.width =
+    percentage + "%";
+</script>
+
+</body>
+</html>
